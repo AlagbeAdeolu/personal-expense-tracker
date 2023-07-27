@@ -7,20 +7,20 @@ import TransactionList from './components/TransactionList';
 import AddTransaction from './components/AddTransaction';
 
 import Card from './components/UI/Card';
+import GlobalProvider from './context/transaction-ctx';
 
 function App() {
   return (
-    <div>
+    <GlobalProvider>
       <Header />
-
-      <Card>
-      <Balance />
-      <IncomeExpense />
-      <TransactionList />
-      <AddTransaction />
+      <Card className="container">
+        <Balance />
+        <IncomeExpense />
+        <TransactionList />
+        <AddTransaction />
       </Card>
 
-    </div>
+    </GlobalProvider>
   );
 }
 

@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { GlobalContext } from '../context/transaction-ctx'
 
 const TransactionList = () => {
+  const {transactions} = useContext(GlobalContext)
   return (
-    <div>
-      
-    </div>
+    <ul>
+      {transactions.map(transaction => <li>{transaction.text}: {transaction.amount}</li>)}
+    </ul>
   )
 }
 
